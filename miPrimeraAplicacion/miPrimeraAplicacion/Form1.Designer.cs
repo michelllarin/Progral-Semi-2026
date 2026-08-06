@@ -35,13 +35,15 @@
             this.btnCalcular = new System.Windows.Forms.Button();
             this.lblRespuesta = new System.Windows.Forms.Label();
             this.grbOpciones = new System.Windows.Forms.GroupBox();
-            this.rdbSuma = new System.Windows.Forms.RadioButton();
-            this.rdbResta = new System.Windows.Forms.RadioButton();
-            this.rdbMultiplicacion = new System.Windows.Forms.RadioButton();
-            this.rdbDivision = new System.Windows.Forms.RadioButton();
-            this.rdbExponente = new System.Windows.Forms.RadioButton();
-            this.rdbRaiz = new System.Windows.Forms.RadioButton();
             this.rdbFactorial = new System.Windows.Forms.RadioButton();
+            this.rdbRaiz = new System.Windows.Forms.RadioButton();
+            this.rdbExponente = new System.Windows.Forms.RadioButton();
+            this.rdbDivision = new System.Windows.Forms.RadioButton();
+            this.rdbMultiplicacion = new System.Windows.Forms.RadioButton();
+            this.rdbResta = new System.Windows.Forms.RadioButton();
+            this.rdbSuma = new System.Windows.Forms.RadioButton();
+            this.cboOpciones = new System.Windows.Forms.ComboBox();
+            this.lblOpciones = new System.Windows.Forms.Label();
             this.grbOpciones.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +51,7 @@
             // 
             this.lblNum1.AutoSize = true;
             this.lblNum1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNum1.Location = new System.Drawing.Point(58, 53);
+            this.lblNum1.Location = new System.Drawing.Point(46, 103);
             this.lblNum1.Name = "lblNum1";
             this.lblNum1.Size = new System.Drawing.Size(81, 26);
             this.lblNum1.TabIndex = 0;
@@ -61,7 +63,7 @@
             // 
             this.lblNum2.AutoSize = true;
             this.lblNum2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNum2.Location = new System.Drawing.Point(61, 98);
+            this.lblNum2.Location = new System.Drawing.Point(49, 148);
             this.lblNum2.Name = "lblNum2";
             this.lblNum2.Size = new System.Drawing.Size(81, 26);
             this.lblNum2.TabIndex = 1;
@@ -69,14 +71,14 @@
             // 
             // txtNum1
             // 
-            this.txtNum1.Location = new System.Drawing.Point(148, 53);
+            this.txtNum1.Location = new System.Drawing.Point(136, 103);
             this.txtNum1.Name = "txtNum1";
             this.txtNum1.Size = new System.Drawing.Size(100, 22);
             this.txtNum1.TabIndex = 2;
             // 
             // txtNum2
             // 
-            this.txtNum2.Location = new System.Drawing.Point(148, 102);
+            this.txtNum2.Location = new System.Drawing.Point(136, 152);
             this.txtNum2.Name = "txtNum2";
             this.txtNum2.Size = new System.Drawing.Size(100, 22);
             this.txtNum2.TabIndex = 3;
@@ -84,7 +86,7 @@
             // btnCalcular
             // 
             this.btnCalcular.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalcular.Location = new System.Drawing.Point(84, 216);
+            this.btnCalcular.Location = new System.Drawing.Point(72, 266);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(147, 49);
             this.btnCalcular.TabIndex = 4;
@@ -96,7 +98,7 @@
             // 
             this.lblRespuesta.AutoSize = true;
             this.lblRespuesta.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRespuesta.Location = new System.Drawing.Point(61, 146);
+            this.lblRespuesta.Location = new System.Drawing.Point(49, 196);
             this.lblRespuesta.Name = "lblRespuesta";
             this.lblRespuesta.Size = new System.Drawing.Size(121, 26);
             this.lblRespuesta.TabIndex = 5;
@@ -112,12 +114,78 @@
             this.grbOpciones.Controls.Add(this.rdbMultiplicacion);
             this.grbOpciones.Controls.Add(this.rdbResta);
             this.grbOpciones.Controls.Add(this.rdbSuma);
-            this.grbOpciones.Location = new System.Drawing.Point(325, 53);
+            this.grbOpciones.Location = new System.Drawing.Point(276, 103);
             this.grbOpciones.Name = "grbOpciones";
             this.grbOpciones.Size = new System.Drawing.Size(191, 239);
             this.grbOpciones.TabIndex = 6;
             this.grbOpciones.TabStop = false;
             this.grbOpciones.Text = "Opciones";
+            // 
+            // rdbFactorial
+            // 
+            this.rdbFactorial.AutoSize = true;
+            this.rdbFactorial.Location = new System.Drawing.Point(28, 190);
+            this.rdbFactorial.Name = "rdbFactorial";
+            this.rdbFactorial.Size = new System.Drawing.Size(80, 20);
+            this.rdbFactorial.TabIndex = 6;
+            this.rdbFactorial.TabStop = true;
+            this.rdbFactorial.Text = "Factorial";
+            this.rdbFactorial.UseVisualStyleBackColor = true;
+            // 
+            // rdbRaiz
+            // 
+            this.rdbRaiz.AutoSize = true;
+            this.rdbRaiz.Location = new System.Drawing.Point(28, 164);
+            this.rdbRaiz.Name = "rdbRaiz";
+            this.rdbRaiz.Size = new System.Drawing.Size(55, 20);
+            this.rdbRaiz.TabIndex = 5;
+            this.rdbRaiz.TabStop = true;
+            this.rdbRaiz.Text = "Raiz";
+            this.rdbRaiz.UseVisualStyleBackColor = true;
+            // 
+            // rdbExponente
+            // 
+            this.rdbExponente.AutoSize = true;
+            this.rdbExponente.Location = new System.Drawing.Point(28, 138);
+            this.rdbExponente.Name = "rdbExponente";
+            this.rdbExponente.Size = new System.Drawing.Size(92, 20);
+            this.rdbExponente.TabIndex = 4;
+            this.rdbExponente.TabStop = true;
+            this.rdbExponente.Text = "Exponente";
+            this.rdbExponente.UseVisualStyleBackColor = true;
+            // 
+            // rdbDivision
+            // 
+            this.rdbDivision.AutoSize = true;
+            this.rdbDivision.Location = new System.Drawing.Point(28, 112);
+            this.rdbDivision.Name = "rdbDivision";
+            this.rdbDivision.Size = new System.Drawing.Size(79, 20);
+            this.rdbDivision.TabIndex = 3;
+            this.rdbDivision.TabStop = true;
+            this.rdbDivision.Text = "Division ";
+            this.rdbDivision.UseVisualStyleBackColor = true;
+            // 
+            // rdbMultiplicacion
+            // 
+            this.rdbMultiplicacion.AutoSize = true;
+            this.rdbMultiplicacion.Location = new System.Drawing.Point(28, 86);
+            this.rdbMultiplicacion.Name = "rdbMultiplicacion";
+            this.rdbMultiplicacion.Size = new System.Drawing.Size(109, 20);
+            this.rdbMultiplicacion.TabIndex = 2;
+            this.rdbMultiplicacion.TabStop = true;
+            this.rdbMultiplicacion.Text = "Multiplicacion";
+            this.rdbMultiplicacion.UseVisualStyleBackColor = true;
+            // 
+            // rdbResta
+            // 
+            this.rdbResta.AutoSize = true;
+            this.rdbResta.Location = new System.Drawing.Point(28, 60);
+            this.rdbResta.Name = "rdbResta";
+            this.rdbResta.Size = new System.Drawing.Size(64, 20);
+            this.rdbResta.TabIndex = 1;
+            this.rdbResta.TabStop = true;
+            this.rdbResta.Text = "Resta";
+            this.rdbResta.UseVisualStyleBackColor = true;
             // 
             // rdbSuma
             // 
@@ -131,77 +199,42 @@
             this.rdbSuma.Text = "Suma";
             this.rdbSuma.UseVisualStyleBackColor = true;
             // 
-            // rdbResta
+            // cboOpciones
             // 
-            this.rdbResta.AutoSize = true;
-            this.rdbResta.Location = new System.Drawing.Point(28, 60);
-            this.rdbResta.Name = "rdbResta";
-            this.rdbResta.Size = new System.Drawing.Size(64, 20);
-            this.rdbResta.TabIndex = 1;
-            this.rdbResta.TabStop = true;
-            this.rdbResta.Text = "Resta";
-            this.rdbResta.UseVisualStyleBackColor = true;
+            this.cboOpciones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboOpciones.FormattingEnabled = true;
+            this.cboOpciones.Items.AddRange(new object[] {
+            "Suma",
+            "Resta",
+            "Multiplicacion",
+            "Division",
+            "Exponente",
+            "Raiz",
+            "Factorial"});
+            this.cboOpciones.Location = new System.Drawing.Point(158, 34);
+            this.cboOpciones.Name = "cboOpciones";
+            this.cboOpciones.Size = new System.Drawing.Size(269, 24);
+            this.cboOpciones.TabIndex = 7;
             // 
-            // rdbMultiplicacion
+            // lblOpciones
             // 
-            this.rdbMultiplicacion.AutoSize = true;
-            this.rdbMultiplicacion.Location = new System.Drawing.Point(28, 86);
-            this.rdbMultiplicacion.Name = "rdbMultiplicacion";
-            this.rdbMultiplicacion.Size = new System.Drawing.Size(109, 20);
-            this.rdbMultiplicacion.TabIndex = 2;
-            this.rdbMultiplicacion.TabStop = true;
-            this.rdbMultiplicacion.Text = "Multiplicacion";
-            this.rdbMultiplicacion.UseVisualStyleBackColor = true;
-            // 
-            // rdbDivision
-            // 
-            this.rdbDivision.AutoSize = true;
-            this.rdbDivision.Location = new System.Drawing.Point(28, 112);
-            this.rdbDivision.Name = "rdbDivision";
-            this.rdbDivision.Size = new System.Drawing.Size(79, 20);
-            this.rdbDivision.TabIndex = 3;
-            this.rdbDivision.TabStop = true;
-            this.rdbDivision.Text = "Division ";
-            this.rdbDivision.UseVisualStyleBackColor = true;
-            // 
-            // rdbExponente
-            // 
-            this.rdbExponente.AutoSize = true;
-            this.rdbExponente.Location = new System.Drawing.Point(28, 138);
-            this.rdbExponente.Name = "rdbExponente";
-            this.rdbExponente.Size = new System.Drawing.Size(92, 20);
-            this.rdbExponente.TabIndex = 4;
-            this.rdbExponente.TabStop = true;
-            this.rdbExponente.Text = "Exponente";
-            this.rdbExponente.UseVisualStyleBackColor = true;
-            // 
-            // rdbRaiz
-            // 
-            this.rdbRaiz.AutoSize = true;
-            this.rdbRaiz.Location = new System.Drawing.Point(28, 164);
-            this.rdbRaiz.Name = "rdbRaiz";
-            this.rdbRaiz.Size = new System.Drawing.Size(55, 20);
-            this.rdbRaiz.TabIndex = 5;
-            this.rdbRaiz.TabStop = true;
-            this.rdbRaiz.Text = "Raiz";
-            this.rdbRaiz.UseVisualStyleBackColor = true;
-            // 
-            // rdbFactorial
-            // 
-            this.rdbFactorial.AutoSize = true;
-            this.rdbFactorial.Location = new System.Drawing.Point(28, 190);
-            this.rdbFactorial.Name = "rdbFactorial";
-            this.rdbFactorial.Size = new System.Drawing.Size(80, 20);
-            this.rdbFactorial.TabIndex = 6;
-            this.rdbFactorial.TabStop = true;
-            this.rdbFactorial.Text = "Factorial";
-            this.rdbFactorial.UseVisualStyleBackColor = true;
+            this.lblOpciones.AutoSize = true;
+            this.lblOpciones.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOpciones.Location = new System.Drawing.Point(46, 34);
+            this.lblOpciones.Name = "lblOpciones";
+            this.lblOpciones.Size = new System.Drawing.Size(106, 26);
+            this.lblOpciones.TabIndex = 8;
+            this.lblOpciones.Text = "Opciones:";
+            this.lblOpciones.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblOpciones.UseMnemonic = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(571, 400);
+            this.ClientSize = new System.Drawing.Size(494, 380);
+            this.Controls.Add(this.lblOpciones);
+            this.Controls.Add(this.cboOpciones);
             this.Controls.Add(this.grbOpciones);
             this.Controls.Add(this.lblRespuesta);
             this.Controls.Add(this.btnCalcular);
@@ -234,6 +267,8 @@
         private System.Windows.Forms.RadioButton rdbMultiplicacion;
         private System.Windows.Forms.RadioButton rdbResta;
         private System.Windows.Forms.RadioButton rdbSuma;
+        private System.Windows.Forms.ComboBox cboOpciones;
+        private System.Windows.Forms.Label lblOpciones;
     }
 }
 
