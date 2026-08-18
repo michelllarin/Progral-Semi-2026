@@ -36,11 +36,13 @@
             this.cboA = new System.Windows.Forms.ComboBox();
             this.lblA = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.cboOpciones = new System.Windows.Forms.ComboBox();
+            this.lblOpciones = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(156, 127);
+            this.txtCantidad.Location = new System.Drawing.Point(182, 197);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(110, 22);
             this.txtCantidad.TabIndex = 3;
@@ -49,7 +51,7 @@
             // btnCalcular
             // 
             this.btnCalcular.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalcular.Location = new System.Drawing.Point(161, 182);
+            this.btnCalcular.Location = new System.Drawing.Point(187, 252);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(147, 49);
             this.btnCalcular.TabIndex = 4;
@@ -61,7 +63,7 @@
             // 
             this.lblRespuesta.AutoSize = true;
             this.lblRespuesta.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRespuesta.Location = new System.Drawing.Point(292, 127);
+            this.lblRespuesta.Location = new System.Drawing.Point(318, 197);
             this.lblRespuesta.Name = "lblRespuesta";
             this.lblRespuesta.Size = new System.Drawing.Size(121, 26);
             this.lblRespuesta.TabIndex = 5;
@@ -72,7 +74,7 @@
             // 
             this.lblde.AutoSize = true;
             this.lblde.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblde.Location = new System.Drawing.Point(55, 38);
+            this.lblde.Location = new System.Drawing.Point(81, 108);
             this.lblde.Name = "lblde";
             this.lblde.Size = new System.Drawing.Size(44, 26);
             this.lblde.TabIndex = 8;
@@ -84,16 +86,7 @@
             // 
             this.cboDe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDe.FormattingEnabled = true;
-            this.cboDe.Items.AddRange(new object[] {
-            "Metros ",
-            "cm",
-            "Pulgadas",
-            "Pies",
-            "Varas",
-            "Yardas",
-            "Km",
-            "Millas"});
-            this.cboDe.Location = new System.Drawing.Point(105, 38);
+            this.cboDe.Location = new System.Drawing.Point(131, 108);
             this.cboDe.Name = "cboDe";
             this.cboDe.Size = new System.Drawing.Size(121, 24);
             this.cboDe.TabIndex = 9;
@@ -101,16 +94,7 @@
             // cboA
             // 
             this.cboA.FormattingEnabled = true;
-            this.cboA.Items.AddRange(new object[] {
-            "Metros ",
-            "cm",
-            "Pulgadas",
-            "Pies",
-            "Varas",
-            "Yardas",
-            "Km",
-            "Millas"});
-            this.cboA.Location = new System.Drawing.Point(297, 38);
+            this.cboA.Location = new System.Drawing.Point(323, 108);
             this.cboA.Name = "cboA";
             this.cboA.Size = new System.Drawing.Size(121, 24);
             this.cboA.TabIndex = 11;
@@ -119,7 +103,7 @@
             // 
             this.lblA.AutoSize = true;
             this.lblA.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblA.Location = new System.Drawing.Point(257, 38);
+            this.lblA.Location = new System.Drawing.Point(283, 108);
             this.lblA.Name = "lblA";
             this.lblA.Size = new System.Drawing.Size(34, 26);
             this.lblA.TabIndex = 10;
@@ -131,18 +115,49 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(49, 123);
+            this.label1.Location = new System.Drawing.Point(75, 193);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 26);
             this.label1.TabIndex = 12;
             this.label1.Text = "Cantidad:";
             this.label1.UseMnemonic = false;
             // 
+            // cboOpciones
+            // 
+            this.cboOpciones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboOpciones.FormattingEnabled = true;
+            this.cboOpciones.Items.AddRange(new object[] {
+            "Longitud",
+            "Monedas",
+            "Masa",
+            "Volumen ",
+            "Almacenamiento",
+            "Tiempo"});
+            this.cboOpciones.Location = new System.Drawing.Point(187, 38);
+            this.cboOpciones.Name = "cboOpciones";
+            this.cboOpciones.Size = new System.Drawing.Size(257, 24);
+            this.cboOpciones.TabIndex = 13;
+            this.cboOpciones.SelectedIndexChanged += new System.EventHandler(this.cboOpciones_SelectedIndexChanged);
+            // 
+            // lblOpciones
+            // 
+            this.lblOpciones.AutoSize = true;
+            this.lblOpciones.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOpciones.Location = new System.Drawing.Point(75, 38);
+            this.lblOpciones.Name = "lblOpciones";
+            this.lblOpciones.Size = new System.Drawing.Size(106, 26);
+            this.lblOpciones.TabIndex = 14;
+            this.lblOpciones.Text = "Opciones:";
+            this.lblOpciones.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.lblOpciones.UseMnemonic = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(535, 331);
+            this.ClientSize = new System.Drawing.Size(608, 331);
+            this.Controls.Add(this.lblOpciones);
+            this.Controls.Add(this.cboOpciones);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cboA);
             this.Controls.Add(this.lblA);
@@ -167,6 +182,8 @@
         private System.Windows.Forms.ComboBox cboA;
         private System.Windows.Forms.Label lblA;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cboOpciones;
+        private System.Windows.Forms.Label lblOpciones;
     }
 }
 
