@@ -88,22 +88,22 @@
             this.cboDe.FormattingEnabled = true;
             this.cboDe.Location = new System.Drawing.Point(131, 108);
             this.cboDe.Name = "cboDe";
-            this.cboDe.Size = new System.Drawing.Size(121, 24);
+            this.cboDe.Size = new System.Drawing.Size(177, 24);
             this.cboDe.TabIndex = 9;
             // 
             // cboA
             // 
             this.cboA.FormattingEnabled = true;
-            this.cboA.Location = new System.Drawing.Point(323, 108);
+            this.cboA.Location = new System.Drawing.Point(370, 108);
             this.cboA.Name = "cboA";
-            this.cboA.Size = new System.Drawing.Size(121, 24);
+            this.cboA.Size = new System.Drawing.Size(173, 24);
             this.cboA.TabIndex = 11;
             // 
             // lblA
             // 
             this.lblA.AutoSize = true;
             this.lblA.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblA.Location = new System.Drawing.Point(283, 108);
+            this.lblA.Location = new System.Drawing.Point(330, 108);
             this.lblA.Name = "lblA";
             this.lblA.Size = new System.Drawing.Size(34, 26);
             this.lblA.TabIndex = 10;
