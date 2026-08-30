@@ -55,23 +55,23 @@ namespace miPrimeraAplicacion
             decimal salarioNeto = sueldo - totalDeducciones;
 
             // 6. Imprimir en pantalla con formato de moneda ($0.00)
-            lblISSS.Text = isss.ToString("C2");
-            lblAFP.Text = afp.ToString("C2");
-            lblISR.Text = isr.ToString("C2");
-            lblTotal.Text = totalDeducciones.ToString("C2");
-            lblSalarioaResibir.Text = salarioNeto.ToString("C2");
+            lblISSS.Text = "ISSS (3%): " + isss.ToString("C2");
+            lblAFP.Text = "AFP (7.25%): " + afp.ToString("C2");
+            lblISR.Text = "ISR (Renta): " + isr.ToString("C2");
+            lblTotal.Text = "Total de Deducciones: " + totalDeducciones.ToString("C2");
+            lblSalarioaResibir.Text = "Salario a Recibir: " + salarioNeto.ToString("C2");
 
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            txtSueldo.Clear();
-            lblISSS.Text = "$0.00";
-            lblAFP.Text = "$0.00";
-            lblISR.Text = "$0.00";
-            lblTotal.Text = "$0.00";
-            lblSalarioaResibir.Text = "$0.00";
-            txtSueldo.Focus();
+            lblISSS.Text = "ISSS (3%):";
+            lblAFP.Text = "AFP (7.25%):";
+            lblISR.Text = "ISR (Renta):";
+            lblTotal.Text = "Total de Deducciones:";
+            lblSalarioaResibir.Text = "Salario a Recibir:";
+
+            
         }
     }
         

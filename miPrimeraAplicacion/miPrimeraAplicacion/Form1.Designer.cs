@@ -71,7 +71,7 @@
             // btnCalcular
             // 
             this.btnCalcular.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalcular.Location = new System.Drawing.Point(351, 126);
+            this.btnCalcular.Location = new System.Drawing.Point(397, 126);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(149, 95);
             this.btnCalcular.TabIndex = 3;
@@ -82,7 +82,7 @@
             // btnLimpiar
             // 
             this.btnLimpiar.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(351, 248);
+            this.btnLimpiar.Location = new System.Drawing.Point(397, 251);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(149, 93);
             this.btnLimpiar.TabIndex = 4;
