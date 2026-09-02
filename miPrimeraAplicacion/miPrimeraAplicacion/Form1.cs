@@ -33,6 +33,7 @@ namespace miPrimeraAplicacion
                     decimal excedente = monto - valorFijoRango;
                     decimal impuesto = ((excedente / valorBase) * multiplicadorAdicional) + precioBase;
 
+
                     lblResultado.Text = $"Valor a pagar: ${Math.Round(impuesto, 2):F2}";
                 }
                 else

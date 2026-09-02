@@ -8,3 +8,13 @@ C:\Users\Michelle\source\repos\Progral-Semi-2026\miPrimeraAplicacion\miPrimeraAp
 C:\Users\Michelle\source\repos\Progral-Semi-2026\miPrimeraAplicacion\miPrimeraAplicacion\obj\Debug\miPrimeraAplicacion.exe
 C:\Users\Michelle\source\repos\Progral-Semi-2026\miPrimeraAplicacion\miPrimeraAplicacion\obj\Debug\miPrimeraAplicacion.pdb
 C:\Users\Michelle\source\repos\Progral-Semi-2026\miPrimeraAplicacion\miPrimeraAplicacion\obj\Debug\miPrimeraAplicacion.btnLooo.resources
+C:\Users\Michelle\Progral-Semi-2026\miPrimeraAplicacion\miPrimeraAplicacion\bin\Debug\miPrimeraAplicacion.exe.config
+C:\Users\Michelle\Progral-Semi-2026\miPrimeraAplicacion\miPrimeraAplicacion\bin\Debug\miPrimeraAplicacion.exe
+C:\Users\Michelle\Progral-Semi-2026\miPrimeraAplicacion\miPrimeraAplicacion\bin\Debug\miPrimeraAplicacion.pdb
+C:\Users\Michelle\Progral-Semi-2026\miPrimeraAplicacion\miPrimeraAplicacion\obj\Debug\miPrimeraAplicacion.csproj.AssemblyReference.cache
+C:\Users\Michelle\Progral-Semi-2026\miPrimeraAplicacion\miPrimeraAplicacion\obj\Debug\miPrimeraAplicacion.btnLooo.resources
+C:\Users\Michelle\Progral-Semi-2026\miPrimeraAplicacion\miPrimeraAplicacion\obj\Debug\miPrimeraAplicacion.Properties.Resources.resources
+C:\Users\Michelle\Progral-Semi-2026\miPrimeraAplicacion\miPrimeraAplicacion\obj\Debug\miPrimeraAplicacion.csproj.GenerateResource.cache
+C:\Users\Michelle\Progral-Semi-2026\miPrimeraAplicacion\miPrimeraAplicacion\obj\Debug\miPrimeraAplicacion.csproj.CoreCompileInputs.cache
+C:\Users\Michelle\Progral-Semi-2026\miPrimeraAplicacion\miPrimeraAplicacion\obj\Debug\miPrimeraAplicacion.exe
+C:\Users\Michelle\Progral-Semi-2026\miPrimeraAplicacion\miPrimeraAplicacion\obj\Debug\miPrimeraAplicacion.pdb
