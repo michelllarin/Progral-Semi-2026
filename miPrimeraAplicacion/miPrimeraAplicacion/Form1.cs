@@ -21,57 +21,66 @@ namespace miPrimeraAplicacion
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            // 1. Validar que la entrada sea un número decimal válido
-            if (!decimal.TryParse(txtSueldo.Text, out decimal sueldo) || sueldo <= 0)
+            if (!double.TryParse(txtMetros.Text, out double metros) || metros < 0)
             {
-                MessageBox.Show("Por favor ingrese un sueldo válido.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtSueldo.Focus();
+                MessageBox.Show("Por favor, ingrese una cantidad válida de metros cúbicos (m³).",
+                                "Error de entrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            // 2. Descuentos básicos
-            decimal isss = Math.Min(sueldo * 0.03m, 30.00m); // ISSS 3%, máximo $30.00
-            decimal afp = sueldo * 0.0725m;                  // AFP 7.25%
 
-            // 3. Salario Gravable para el ISR
-            decimal gravable = sueldo - isss - afp;
-            decimal isr = 0.00m;
+            double cuotaAcueducto = 0;
+            double cuotaAlcantarillado = 0;
 
-            // 4. Cálculo del ISR según tramos de ley
-            if (gravable > 2038.10m)
+            if (metros <= 10)
             {
-                isr = ((gravable - 2038.10m) * 0.30m) + 288.57m;
+                cuotaAcueducto = 2.29;
+                cuotaAlcantarillado = 0.10;
             }
-            else if (gravable > 895.24m)
+            else if (metros <= 20)
             {
-                isr = ((gravable - 895.24m) * 0.20m) + 60.00m;
+                cuotaAcueducto = metros * 0.21;
+                cuotaAlcantarillado = 0.10;
             }
-            else if (gravable > 472.00m)
+            else if (metros <= 30)
             {
-                isr = ((gravable - 472.00m) * 0.10m) + 17.67m;
+                cuotaAcueducto = metros * 0.37;
+                cuotaAlcantarillado = 1.80;
+            }
+            else if (metros <= 40)
+            {
+                cuotaAcueducto = metros * 0.76;
+                cuotaAlcantarillado = 3.00;
+            }
+            else if (metros <= 50)
+            {
+                cuotaAcueducto = metros * 1.65;
+                cuotaAlcantarillado = 4.00;
+            }
+            else
+            {
+                cuotaAcueducto = metros * 2.20;
+                cuotaAlcantarillado = 7.50;
             }
 
-            // 5. Totales
-            decimal totalDeducciones = isss + afp + isr;
-            decimal salarioNeto = sueldo - totalDeducciones;
+            double totalPagar = cuotaAcueducto + cuotaAlcantarillado;
 
-            // 6. Imprimir en pantalla con formato de moneda ($0.00)
-            lblISSS.Text = "ISSS (3%): " + isss.ToString("C2");
-            lblAFP.Text = "AFP (7.25%): " + afp.ToString("C2");
-            lblISR.Text = "ISR (Renta): " + isr.ToString("C2");
-            lblTotal.Text = "Total de Deducciones: " + totalDeducciones.ToString("C2");
-            lblSalarioaResibir.Text = "Salario a Recibir: " + salarioNeto.ToString("C2");
-
+            lblResultado.Text = $"Total a Pagar: ${totalPagar:F2} al mes";
+            
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            lblISSS.Text = "ISSS (3%):";
-            lblAFP.Text = "AFP (7.25%):";
-            lblISR.Text = "ISR (Renta):";
-            lblTotal.Text = "Total de Deducciones:";
-            lblSalarioaResibir.Text = "Salario a Recibir:";
+            txtMetros.Clear(); 
 
-            
+            lblResultado.Text = "Total a pagar: $0.00";
+
+            txtMetros.Focus();
+
+        }
+
+        private void txtSueldo_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
         
