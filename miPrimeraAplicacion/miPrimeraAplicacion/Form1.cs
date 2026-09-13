@@ -12,66 +12,61 @@ using System.Windows.Forms;
 
 namespace miPrimeraAplicacion
 {
-    public partial class btnLooo : Form
+    public partial class Form1 : Form
     {
-        public btnLooo()
+        public Form1()
         {
             InitializeComponent();
+
         }
+        String[][] etiquetas =
+       {
+            new string[]{"Metros", "Cm", "Pulgadas", "Pies", "Varas", "Yardas", "Km", "Millas"},//Longuitud
+            new string[]{"Gramo","Tonelada","Kilogramo","Miligramo","Microgramo","Tonelada larga","Tonelada corta","Stone","Libra","Onza"},//Masa
+            new string[]{"Bit", "Kilobit", "Megabit", "Gigabit", "Terabit", "Petabit", "Byte", "Kilobyte", "Megabyte", "Gigabyte", "Terabyte", "Petabyte"},//Almacenamiento
+            new string[]{"Segundos","Nanosegundo","Microsegundo","Milisegundo","Minuto","Hora","Día","Semana","Mes","Año","Década","Siglo"},//Tiempo
+            new string[]{"Litro","Galón estadounidense","Cuarto estadounidense","Pinta estadounidense","Taza americana oficial","Onza líquida estadounidense","Cucharada estadounidense","Cucharadita estadounidence","Metro cúbico","Mililitro","Galón imperial","Cuarto imperial","Pinta imperial","Taza imperial","Onza líquida imperial","Cucharada imperial","Cucharadita imperial","Pie cúbico","Pulgada cúbica"},//Volumen
+            new string[]{"Metro cuadrado", "Kilómetro cuadrado", "Millas cuadradas", "Yardas cuadradas", "Pie cuadrado", "Pulgada cuadrada", "Hectárea", "Acre"} //Áreas
+            
+        };
+        Double[][] valores = {
+            new double[]{ 1, 100, 39.3701, 3.28084, 1.1963, 1.09361, 0.001, 0.000621371},
+            new double[]{1, 1e-6, 0.001, 1000, 1e+6, 9.8421e-7, 1.1023e-6, 0.000157473, 0.00220462, 0.035274},
+             new double[]{1, 0.001, 1e-6, 1e-9, 1e-12, 1e-15, 0.125, 0.000125, 1.25e-7, 1.25e-10, 1.25e-13, 1.25e-16},
+             new double[]{1, 1e+9, 1e+6, 1000, 0.0166667, 0.000277778, 1.1574e-5, 1.6534e-6, 3.8052e-7, 3.171e-8, 3.171e-9, 3.171e-10},
+            new double[]{1, 0.264172, 1.05669, 2.11338, 4.16667, 33.814, 67.628, 202.884, 0.001, 1000, 0.219969, 0.879877, 1.75975, 3.51951, 35.1951, 56.3121, 168.936, 0.0353147, 61.0237},
+            new double[]{1, 1e-6, 3.861e-7, 1.19599, 10.7639, 1550, 1e-4, 0.000247105}
+            };
+
+
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            // 1. Validar que la entrada sea un número decimal válido
-            if (!decimal.TryParse(txtSueldo.Text, out decimal sueldo) || sueldo <= 0)
-            {
-                MessageBox.Show("Por favor ingrese un sueldo válido.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtSueldo.Focus();
-                return;
-            }
-            // 2. Descuentos básicos
-            decimal isss = Math.Min(sueldo * 0.03m, 30.00m); // ISSS 3%, máximo $30.00
-            decimal afp = sueldo * 0.0725m;                  // AFP 7.25%
+            int de = cboDe.SelectedIndex, a = cboA.SelectedIndex, opcion = cboOpciones.SelectedIndex;
+            double cantidad = Double.Parse(txtCantidad.Text);
 
-            // 3. Salario Gravable para el ISR
-            decimal gravable = sueldo - isss - afp;
-            decimal isr = 0.00m;
+            double respuesta = valores[opcion][a] / valores[opcion][de] * cantidad;
 
-            // 4. Cálculo del ISR según tramos de ley
-            if (gravable > 2038.10m)
-            {
-                isr = ((gravable - 2038.10m) * 0.30m) + 288.57m;
-            }
-            else if (gravable > 895.24m)
-            {
-                isr = ((gravable - 895.24m) * 0.20m) + 60.00m;
-            }
-            else if (gravable > 472.00m)
-            {
-                isr = ((gravable - 472.00m) * 0.10m) + 17.67m;
-            }
-
-            // 5. Totales
-            decimal totalDeducciones = isss + afp + isr;
-            decimal salarioNeto = sueldo - totalDeducciones;
-
-            // 6. Imprimir en pantalla con formato de moneda ($0.00)
-            lblISSS.Text = "ISSS (3%): " + isss.ToString("C2");
-            lblAFP.Text = "AFP (7.25%): " + afp.ToString("C2");
-            lblISR.Text = "ISR (Renta): " + isr.ToString("C2");
-            lblTotal.Text = "Total de Deducciones: " + totalDeducciones.ToString("C2");
-            lblSalarioaResibir.Text = "Salario a Recibir: " + salarioNeto.ToString("C2");
+            lblResultado.Text = respuesta.ToString();
 
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            lblISSS.Text = "ISSS (3%):";
-            lblAFP.Text = "AFP (7.25%):";
-            lblISR.Text = "ISR (Renta):";
-            lblTotal.Text = "Total de Deducciones:";
-            lblSalarioaResibir.Text = "Salario a Recibir:";
 
             
+        }
+
+        private void cboOpciones_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Limpiamos los valores anteriores
+            cboDe.Items.Clear();
+            cboA.Items.Clear();
+
+            //Asignamos los nuevos valores
+            int opcion = cboOpciones.SelectedIndex;
+            cboDe.Items.AddRange(etiquetas[opcion]);
+            cboA.Items.AddRange(etiquetas[opcion]);
         }
     }
         
