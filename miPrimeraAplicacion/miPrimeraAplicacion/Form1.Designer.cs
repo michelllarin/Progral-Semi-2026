@@ -28,133 +28,123 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblCalculo = new System.Windows.Forms.Label();
-            this.txtSueldo = new System.Windows.Forms.TextBox();
-            this.lblSueldo = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblValor = new System.Windows.Forms.Label();
             this.btnCalcular = new System.Windows.Forms.Button();
-            this.btnLimpiar = new System.Windows.Forms.Button();
-            this.lblISSS = new System.Windows.Forms.Label();
+            this.lblDesde = new System.Windows.Forms.Label();
             this.lblAFP = new System.Windows.Forms.Label();
-            this.lblISR = new System.Windows.Forms.Label();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.lblSalarioaResibir = new System.Windows.Forms.Label();
+            this.lblResultado = new System.Windows.Forms.Label();
+            this.cmbDesde = new System.Windows.Forms.ComboBox();
+            this.cmbHasta = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // lblCalculo
+            // textBox1
             // 
-            this.lblCalculo.AutoSize = true;
-            this.lblCalculo.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCalculo.Location = new System.Drawing.Point(77, 25);
-            this.lblCalculo.Name = "lblCalculo";
-            this.lblCalculo.Size = new System.Drawing.Size(318, 26);
-            this.lblCalculo.TabIndex = 0;
-            this.lblCalculo.Text = "Calculo  de ley (ISSS, AFP, ISR)";
+            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(251, 41);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(302, 34);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.TextChanged += new System.EventHandler(this.txtSueldo_TextChanged);
             // 
-            // txtSueldo
+            // lblValor
             // 
-            this.txtSueldo.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSueldo.Location = new System.Drawing.Point(157, 78);
-            this.txtSueldo.Name = "txtSueldo";
-            this.txtSueldo.Size = new System.Drawing.Size(177, 34);
-            this.txtSueldo.TabIndex = 1;
-            // 
-            // lblSueldo
-            // 
-            this.lblSueldo.AutoSize = true;
-            this.lblSueldo.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSueldo.Location = new System.Drawing.Point(68, 81);
-            this.lblSueldo.Name = "lblSueldo";
-            this.lblSueldo.Size = new System.Drawing.Size(83, 26);
-            this.lblSueldo.TabIndex = 2;
-            this.lblSueldo.Text = "Sueldo:";
+            this.lblValor.AutoSize = true;
+            this.lblValor.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValor.Location = new System.Drawing.Point(34, 49);
+            this.lblValor.Name = "lblValor";
+            this.lblValor.Size = new System.Drawing.Size(173, 26);
+            this.lblValor.TabIndex = 2;
+            this.lblValor.Text = "Valor a convertir ";
+            this.lblValor.Click += new System.EventHandler(this.lblSueldo_Click);
             // 
             // btnCalcular
             // 
             this.btnCalcular.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalcular.Location = new System.Drawing.Point(397, 126);
+            this.btnCalcular.Location = new System.Drawing.Point(362, 151);
             this.btnCalcular.Name = "btnCalcular";
-            this.btnCalcular.Size = new System.Drawing.Size(149, 95);
+            this.btnCalcular.Size = new System.Drawing.Size(153, 85);
             this.btnCalcular.TabIndex = 3;
-            this.btnCalcular.Text = "Calcular";
+            this.btnCalcular.Text = "Convertir";
             this.btnCalcular.UseVisualStyleBackColor = true;
             this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
-            // btnLimpiar
+            // lblDesde
             // 
-            this.btnLimpiar.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(397, 251);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(149, 93);
-            this.btnLimpiar.TabIndex = 4;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
-            // lblISSS
-            // 
-            this.lblISSS.AutoSize = true;
-            this.lblISSS.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblISSS.Location = new System.Drawing.Point(68, 182);
-            this.lblISSS.Name = "lblISSS";
-            this.lblISSS.Size = new System.Drawing.Size(123, 26);
-            this.lblISSS.TabIndex = 5;
-            this.lblISSS.Text = "ISSS (3%): ";
+            this.lblDesde.AutoSize = true;
+            this.lblDesde.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDesde.Location = new System.Drawing.Point(51, 139);
+            this.lblDesde.Name = "lblDesde";
+            this.lblDesde.Size = new System.Drawing.Size(129, 26);
+            this.lblDesde.TabIndex = 5;
+            this.lblDesde.Text = "Covertir de: ";
             // 
             // lblAFP
             // 
             this.lblAFP.AutoSize = true;
             this.lblAFP.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAFP.Location = new System.Drawing.Point(68, 219);
+            this.lblAFP.Location = new System.Drawing.Point(57, 224);
             this.lblAFP.Name = "lblAFP";
-            this.lblAFP.Size = new System.Drawing.Size(139, 26);
+            this.lblAFP.Size = new System.Drawing.Size(123, 26);
             this.lblAFP.TabIndex = 6;
-            this.lblAFP.Text = "AFP (7.25%):";
+            this.lblAFP.Text = "Convertir a:";
             // 
-            // lblISR
+            // lblResultado
             // 
-            this.lblISR.AutoSize = true;
-            this.lblISR.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblISR.Location = new System.Drawing.Point(68, 251);
-            this.lblISR.Name = "lblISR";
-            this.lblISR.Size = new System.Drawing.Size(129, 26);
-            this.lblISR.TabIndex = 7;
-            this.lblISR.Text = "ISR (Renta):";
+            this.lblResultado.AutoSize = true;
+            this.lblResultado.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResultado.Location = new System.Drawing.Point(70, 307);
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.Size = new System.Drawing.Size(110, 26);
+            this.lblResultado.TabIndex = 9;
+            this.lblResultado.Text = "Resultado:";
             // 
-            // lblTotal
+            // cmbDesde
             // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(68, 280);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(217, 26);
-            this.lblTotal.TabIndex = 8;
-            this.lblTotal.Text = "Total de Deducciones:";
+            this.cmbDesde.FormattingEnabled = true;
+            this.cmbDesde.Items.AddRange(new object[] {
+            "Pie Cuadrado",
+            "Vara Cuadrada",
+            "Yarda Cuadrada",
+            "Metro Cuadrado",
+            "Tareas",
+            "Manzana",
+            "Hectárea"});
+            this.cmbDesde.Location = new System.Drawing.Point(186, 139);
+            this.cmbDesde.Name = "cmbDesde";
+            this.cmbDesde.Size = new System.Drawing.Size(121, 24);
+            this.cmbDesde.TabIndex = 10;
+            this.cmbDesde.SelectedIndexChanged += new System.EventHandler(this.cmbDesde_SelectedIndexChanged);
             // 
-            // lblSalarioaResibir
+            // cmbHasta
             // 
-            this.lblSalarioaResibir.AutoSize = true;
-            this.lblSalarioaResibir.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSalarioaResibir.Location = new System.Drawing.Point(77, 315);
-            this.lblSalarioaResibir.Name = "lblSalarioaResibir";
-            this.lblSalarioaResibir.Size = new System.Drawing.Size(171, 26);
-            this.lblSalarioaResibir.TabIndex = 9;
-            this.lblSalarioaResibir.Text = "Salario a Resibir:";
+            this.cmbHasta.FormattingEnabled = true;
+            this.cmbHasta.Items.AddRange(new object[] {
+            "Pie Cuadrado",
+            "Vara Cuadrada",
+            "Yarda Cuadrada",
+            "Metro Cuadrado",
+            "Tareas",
+            "Manzana",
+            "Hectárea"});
+            this.cmbHasta.Location = new System.Drawing.Point(186, 224);
+            this.cmbHasta.Name = "cmbHasta";
+            this.cmbHasta.Size = new System.Drawing.Size(121, 24);
+            this.cmbHasta.TabIndex = 11;
             // 
             // btnLooo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(577, 419);
-            this.Controls.Add(this.lblSalarioaResibir);
-            this.Controls.Add(this.lblTotal);
-            this.Controls.Add(this.lblISR);
+            this.Controls.Add(this.cmbHasta);
+            this.Controls.Add(this.cmbDesde);
+            this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.lblAFP);
-            this.Controls.Add(this.lblISSS);
-            this.Controls.Add(this.btnLimpiar);
+            this.Controls.Add(this.lblDesde);
             this.Controls.Add(this.btnCalcular);
-            this.Controls.Add(this.lblSueldo);
-            this.Controls.Add(this.txtSueldo);
-            this.Controls.Add(this.lblCalculo);
+            this.Controls.Add(this.lblValor);
+            this.Controls.Add(this.textBox1);
             this.Name = "btnLooo";
             this.Text = "Mi Pimera Aplicacion ";
             this.ResumeLayout(false);
@@ -163,17 +153,14 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblCalculo;
-        private System.Windows.Forms.TextBox txtSueldo;
-        private System.Windows.Forms.Label lblSueldo;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.Button btnCalcular;
-        private System.Windows.Forms.Button btnLimpiar;
-        private System.Windows.Forms.Label lblISSS;
+        private System.Windows.Forms.Label lblDesde;
         private System.Windows.Forms.Label lblAFP;
-        private System.Windows.Forms.Label lblISR;
-        private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.Label lblSalarioaResibir;
+        private System.Windows.Forms.Label lblResultado;
+        private System.Windows.Forms.ComboBox cmbDesde;
+        private System.Windows.Forms.ComboBox cmbHasta;
     }
 }
 

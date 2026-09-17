@@ -9,69 +9,97 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace miPrimeraAplicacion
 {
     public partial class btnLooo : Form
     {
+        // Diccionario: unidad -> factor de conversión a METROS CUADRADOS (unidad base)
+        private Dictionary<string, double> factoresAMetros = new Dictionary<string, double>
+        {
+            { "Pie Cuadrado", 0.092903 },
+            { "Vara Cuadrada", 0.698896 },
+            { "Yarda Cuadrada", 0.836127 },
+            { "Metro Cuadrado", 1.0 },
+            { "Tareas", 437.5 },
+            { "Manzana", 6988.96 },
+            { "Hectárea", 10000.0 }
+        };
         public btnLooo()
         {
             InitializeComponent();
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // Carga las unidades disponibles en ambos combos
+            foreach (string unidad in factoresAMetros.Keys)
+            {
+                cmbDesde.Items.Add(unidad);
+                cmbHasta.Items.Add(unidad);
+            }
+
+            // Selección por defecto
+            cmbDesde.SelectedIndex = 0;
+            cmbHasta.SelectedIndex = 3; // Metro Cuadrado
+        }
+
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            // 1. Validar que la entrada sea un número decimal válido
-            if (!decimal.TryParse(txtSueldo.Text, out decimal sueldo) || sueldo <= 0)
+            // --- Validaciones ---
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
             {
-                MessageBox.Show("Por favor ingrese un sueldo válido.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtSueldo.Focus();
+                MessageBox.Show("Por favor ingrese un valor a convertir.");
                 return;
             }
-            // 2. Descuentos básicos
-            decimal isss = Math.Min(sueldo * 0.03m, 30.00m); // ISSS 3%, máximo $30.00
-            decimal afp = sueldo * 0.0725m;                  // AFP 7.25%
 
-            // 3. Salario Gravable para el ISR
-            decimal gravable = sueldo - isss - afp;
-            decimal isr = 0.00m;
-
-            // 4. Cálculo del ISR según tramos de ley
-            if (gravable > 2038.10m)
+            double valor;
+            if (!double.TryParse(textBox1.Text, out valor))
             {
-                isr = ((gravable - 2038.10m) * 0.30m) + 288.57m;
-            }
-            else if (gravable > 895.24m)
-            {
-                isr = ((gravable - 895.24m) * 0.20m) + 60.00m;
-            }
-            else if (gravable > 472.00m)
-            {
-                isr = ((gravable - 472.00m) * 0.10m) + 17.67m;
+                MessageBox.Show("El valor ingresado no es un número válido.");
+                return;
             }
 
-            // 5. Totales
-            decimal totalDeducciones = isss + afp + isr;
-            decimal salarioNeto = sueldo - totalDeducciones;
+            if (cmbDesde.SelectedItem == null || cmbHasta.SelectedItem == null)
+            {
+                MessageBox.Show("Seleccione la unidad de origen y destino.");
+                return;
+            }
 
-            // 6. Imprimir en pantalla con formato de moneda ($0.00)
-            lblISSS.Text = "ISSS (3%): " + isss.ToString("C2");
-            lblAFP.Text = "AFP (7.25%): " + afp.ToString("C2");
-            lblISR.Text = "ISR (Renta): " + isr.ToString("C2");
-            lblTotal.Text = "Total de Deducciones: " + totalDeducciones.ToString("C2");
-            lblSalarioaResibir.Text = "Salario a Recibir: " + salarioNeto.ToString("C2");
+            string unidadDesde = cmbDesde.SelectedItem.ToString();
+            string unidadHasta = cmbHasta.SelectedItem.ToString();
 
+            // --- Conversión ---
+            // 1. Convertimos el valor de la unidad de origen a metros cuadrados (unidad base)
+            double valorEnMetros = valor * factoresAMetros[unidadDesde];
+
+            // 2. Convertimos de metros cuadrados a la unidad de destino
+            double resultado = valorEnMetros / factoresAMetros[unidadHasta];
+
+            lblResultado.Text = "Resultado: " + resultado.ToString("N4") + " " + unidadHasta;
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            lblISSS.Text = "ISSS (3%):";
-            lblAFP.Text = "AFP (7.25%):";
-            lblISR.Text = "ISR (Renta):";
-            lblTotal.Text = "Total de Deducciones:";
-            lblSalarioaResibir.Text = "Salario a Recibir:";
+        
 
             
+        }
+
+        private void txtSueldo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSueldo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbDesde_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
         
