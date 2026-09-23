@@ -19,6 +19,20 @@ namespace miPrimeraAplicacion
             InitializeComponent();
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDireccionAlumno_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grbDatos_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
         
 }
