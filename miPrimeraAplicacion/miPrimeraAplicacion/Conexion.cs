@@ -22,18 +22,77 @@ namespace miPrimeraAplicacion
             //Constructor e inicializador de los miembros de la clase
             String cadenaConexion = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\db_academica.mdf;Integrated Security=True";
             objConexion.ConnectionString = cadenaConexion;
-            objConexion.Open(); //abrir la BD
+            if (objConexion.State == ConnectionState.Closed)
+            {
+                objConexion.Open();// abrir la BD
+            }
         }
         public DataSet obtenerDatos()
         {
-            objDs.Clear(); //Limpiar la base de datos 
-            objComando.Connection = objConexion; //Establecer la conexion para ejecutar consultas a la BD
+            objDs.Clear(); // Limpiar el dataset
 
+            objComando.Connection = objConexion;
             objDataAdapter.SelectCommand = objComando;
+
+            // 1. Cargar Alumnos
             objComando.CommandText = "SELECT * FROM alumnos";
-            objDataAdapter.Fill(objDs, "alumnos"); //tomamos los datos de la BD y llenamos el ds
+            objDataAdapter.Fill(objDs, "alumnos");
+
+           
 
             return objDs;
         }
+        public string administrarDatosAlumnos(String[] datos, String accion)
+        {
+            String sql = "";
+            if (accion == "nuevo")
+            {
+                sql = "INSERT INTO alumnos(codigo,nombre,direccion,telefono) VALUES ('" + datos[1] + "', '" + datos[2] + "', '" + datos[3] + "', '" + datos[4] + "')";
+            }
+            else if (accion == "modificar")
+            {
+                sql = "UPDATE alumnos SET codigo='" + datos[1] + "', nombre='" + datos[2] + "', direccion='" + datos[3] + "', telefono='" + datos[4] + "' WHERE idAlumno='" + datos[0] + "'";
+            }
+            else if (accion == "eliminar")
+            {
+                sql = "DELETE FROM alumnos WHERE idAlumno='" + datos[0] + "'";
+            }
+            return ejecutarSQL(sql);
+        }
+
+            public string administrarDatosMaterias(String[] datos, String accion)
+        {
+            String sql = "";
+            if (accion == "nuevo")
+            {
+                sql = "INSERT INTO materias(codigo,nombre,uv) VALUES ('" + datos[1] + "', '" + datos[2] + "', '" + datos[3] + "')";
+            }
+            else if (accion == "modificar")
+            {
+                sql = "UPDATE materias SET codigo='" + datos[1] + "', nombre='" + datos[2] + "', uv='" + datos[3] + "' WHERE idMateria='" + datos[0] + "'";
+            }
+            else if (accion == "eliminar")
+            {
+                sql = "DELETE FROM materias WHERE idMateria='" + datos[0] + "'";
+            }
+            return ejecutarSQL(sql);
+        }
+        public String ejecutarSQL(String sql)
+        {
+            try
+            {
+                objComando.Connection = objConexion;
+                objComando.CommandText = sql;
+                return objComando.ExecuteNonQuery().ToString();
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
     }
 }
+
+        
+    
+
