@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Michelle\\Desktop\\Progral-Semi-2026\\webapp\\webapp\\webapp.csproj": {}
+    "C:\\Users\\Michelle\\Desktop\\Progral-Semi-2026-wepp\\webapp\\webapp\\webapp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Michelle\\Desktop\\Progral-Semi-2026\\webapp\\webapp\\webapp.csproj": {
+    "C:\\Users\\Michelle\\Desktop\\Progral-Semi-2026-wepp\\webapp\\webapp\\webapp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Michelle\\Desktop\\Progral-Semi-2026\\webapp\\webapp\\webapp.csproj",
+        "projectUniqueName": "C:\\Users\\Michelle\\Desktop\\Progral-Semi-2026-wepp\\webapp\\webapp\\webapp.csproj",
         "projectName": "webapp",
-        "projectPath": "C:\\Users\\Michelle\\Desktop\\Progral-Semi-2026\\webapp\\webapp\\webapp.csproj",
+        "projectPath": "C:\\Users\\Michelle\\Desktop\\Progral-Semi-2026-wepp\\webapp\\webapp\\webapp.csproj",
         "packagesPath": "C:\\Users\\Michelle\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Michelle\\Desktop\\Progral-Semi-2026\\webapp\\webapp\\obj\\",
+        "outputPath": "C:\\Users\\Michelle\\Desktop\\Progral-Semi-2026-wepp\\webapp\\webapp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
