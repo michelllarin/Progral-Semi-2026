@@ -1,0 +1,8 @@
+wwwroot\img\logo.jpeg
+wwwroot\img\logo.webp
+wwwroot\views\alumno.html
+wwwroot\views\app.js
+wwwroot\views\index.html
+C:\Users\Michelle\Desktop\Progral-Semi-2026-wepp\webapp\webapp\wwwroot\views\app.js
+C:\Users\Michelle\Desktop\Progral-Semi-2026-wepp\webapp\webapp\wwwroot\views\index.html
+C:\Users\Michelle\Desktop\Progral-Semi-2026-wepp\webapp\webapp\wwwroot\views\alumno.html

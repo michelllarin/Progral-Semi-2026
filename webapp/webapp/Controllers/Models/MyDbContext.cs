@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-namespace webapp.Controllers.Models
+using webapp.Controllers.Models;
+namespace webapp.Models
 {
     public class MyDbContext : DbContext
     {
