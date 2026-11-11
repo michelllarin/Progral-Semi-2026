@@ -24,3 +24,13 @@ function cerrarVentana() {
         $(`#${e.target.dataset.form}`).hidden();
     });
 }
+
+async function obtenerAlumnos(buscar = '') {
+    const respuesta = await fetch(`api/Alumnos/buscar?buscar?=${buscar}`, {
+        method: "GET",
+        header: { "Content-Type": "application/json" }
+
+    }),
+        alumnos = await respuesta.json();
+    return alumnos;
+}

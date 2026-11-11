@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Z5lulCeGr/c=",
+  "dgSpecHash": "JjwdOpm7o9k=",
   "success": false,
   "projectFilePath": "C:\\Users\\Michelle\\Desktop\\Progral-Semi-2026-wepp\\webapp\\webapp\\webapp.csproj",
   "expectedPackageFiles": [
@@ -21,11 +21,11 @@
     "C:\\Users\\Michelle\\.nuget\\packages\\microsoft.entityframeworkcore\\10.0.13\\microsoft.entityframeworkcore.10.0.13.nupkg.sha512",
     "C:\\Users\\Michelle\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\10.0.13\\microsoft.entityframeworkcore.abstractions.10.0.13.nupkg.sha512",
     "C:\\Users\\Michelle\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\10.0.13\\microsoft.entityframeworkcore.analyzers.10.0.13.nupkg.sha512",
-    "C:\\Users\\Michelle\\.nuget\\packages\\microsoft.entityframeworkcore.design\\10.0.15\\microsoft.entityframeworkcore.design.10.0.15.nupkg.sha512",
+    "C:\\Users\\Michelle\\.nuget\\packages\\microsoft.entityframeworkcore.design\\10.0.14\\microsoft.entityframeworkcore.design.10.0.14.nupkg.sha512",
     "C:\\Users\\Michelle\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\10.0.15\\microsoft.entityframeworkcore.relational.10.0.15.nupkg.sha512",
     "C:\\Users\\Michelle\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\10.0.15\\microsoft.entityframeworkcore.sqlserver.10.0.15.nupkg.sha512",
     "C:\\Users\\Michelle\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\10.0.15\\microsoft.entityframeworkcore.tools.10.0.15.nupkg.sha512",
-    "C:\\Users\\Michelle\\.nuget\\packages\\microsoft.extensions.dependencymodel\\10.0.15\\microsoft.extensions.dependencymodel.10.0.15.nupkg.sha512",
+    "C:\\Users\\Michelle\\.nuget\\packages\\microsoft.extensions.dependencymodel\\10.0.14\\microsoft.extensions.dependencymodel.10.0.14.nupkg.sha512",
     "C:\\Users\\Michelle\\.nuget\\packages\\microsoft.identity.client\\4.84.2\\microsoft.identity.client.4.84.2.nupkg.sha512",
     "C:\\Users\\Michelle\\.nuget\\packages\\microsoft.identity.client.broker\\4.84.2\\microsoft.identity.client.broker.4.84.2.nupkg.sha512",
     "C:\\Users\\Michelle\\.nuget\\packages\\microsoft.identity.client.extensions.msal\\4.78.0\\microsoft.identity.client.extensions.msal.4.78.0.nupkg.sha512",
@@ -64,6 +64,17 @@
       "warningLevel": 1,
       "filePath": "C:\\Users\\Michelle\\Desktop\\Progral-Semi-2026-wepp\\webapp\\webapp\\webapp.csproj",
       "libraryId": "Microsoft.OpenApi",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Advertencia como error: Degradación del paquete detectada: Microsoft.EntityFrameworkCore.Design de 10.0.15 a 10.0.14. Haga referencia al paquete directamente desde el proyecto para seleccionar una versión diferente. \r\n webapp -> Microsoft.EntityFrameworkCore.Tools 10.0.15 -> Microsoft.EntityFrameworkCore.Design (>= 10.0.15) \r\n webapp -> Microsoft.EntityFrameworkCore.Design (>= 10.0.14)",
+      "projectPath": "C:\\Users\\Michelle\\Desktop\\Progral-Semi-2026-wepp\\webapp\\webapp\\webapp.csproj",
+      "filePath": "C:\\Users\\Michelle\\Desktop\\Progral-Semi-2026-wepp\\webapp\\webapp\\webapp.csproj",
+      "libraryId": "Microsoft.EntityFrameworkCore.Design",
       "targetGraphs": [
         "net10.0"
       ]
