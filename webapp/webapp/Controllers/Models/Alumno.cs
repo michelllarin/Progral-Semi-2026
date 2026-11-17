@@ -6,14 +6,14 @@ namespace webapp.Controllers.Models
         [ Key ]
         public int idAlumno { get; set; }
 
-        public int codigo { get; set; }
+        public string codigo { get; set; } = string.Empty;
 
-        public int nombre { get; set; }
+        public string nombre { get; set; } = string.Empty;
 
-        public int direccion { get; set; }
+        public string direccion { get; set; } = string.Empty;
 
-        public int telefono { get; set; }
+        public string? telefono { get; set; }
 
-        public int email { get; set; }
+        public string? email { get; set; }
     }
 }

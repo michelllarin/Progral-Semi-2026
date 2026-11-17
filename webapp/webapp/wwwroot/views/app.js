@@ -26,11 +26,14 @@ function cerrarVentana() {
 }
 
 async function obtenerAlumnos(buscar = '') {
-    const respuesta = await fetch(`api/Alumnos/buscar?buscar?=${buscar}`, {
-        method: "GET",
-        header: { "Content-Type": "application/json" }
+    const respuesta = await fetch(`/api/Alumnos/buscar?buscar=${encodeURIComponent(buscar)}`);
 
-    }),
-        alumnos = await respuesta.json();
+    if (!respuesta.ok) {
+        const mensaje = await respuesta.text();
+        console.error("Error del servidor:", respuesta.status, mensaje);
+        return [];
+    }
+
+    const alumnos = await respuesta.json();
     return alumnos;
 }
