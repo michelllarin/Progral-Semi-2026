@@ -8,6 +8,7 @@ namespace webapp.Models
 
         public MyDbContext(DbContextOptions<MyDbContext> options) : base(options) { }
         public DbSet<Alumno> Alumnos { get; set; }
+        public DbSet<Materia> Materias  { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
