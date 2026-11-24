@@ -22,15 +22,18 @@ public class MateriasController : ControllerBase
 
     // GET: api/Materia/buscar
     [HttpGet("buscar")]
-    public async Task<ActionResult<IEnumerable<Materia>>> BuscarMateria([FromQuery]
-       MateriaBusquedaParametros parametros)
+    public async Task<ActionResult<IEnumerable<Materia>>> BuscarMateria([FromQuery] MateriaBusquedaParametros parametros)
     {
         var consulta = _context.Materias.AsQueryable();
+
         if (!string.IsNullOrEmpty(parametros.buscar))
         {
-            consulta = consulta.Where(materia => materia.nombre.Contains(parametros.buscar));
+            consulta = consulta.Where(materia =>
+                materia.nombre.Contains(parametros.buscar) ||
+                materia.codigo.ToString().Contains(parametros.buscar));
         }
-        return await _context.Materias.ToListAsync();
+
+        return await consulta.ToListAsync();
     }
 
     // GET: api/Materia/5

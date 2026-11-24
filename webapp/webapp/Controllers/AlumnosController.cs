@@ -23,20 +23,19 @@ public class AlumnosController : ControllerBase
 
     // GET: api/Alumnos/buscar
     [HttpGet("buscar")]
-    public async Task<ActionResult<IEnumerable<Alumno>>> BuscarAlumno([FromQuery] string? buscar)
+    public async Task<ActionResult<IEnumerable<Alumno>>> BuscarAlumno([FromQuery] AlumnoBusquedaParametros parametros)
     {
         var consulta = _context.Alumnos.AsQueryable();
 
-        if (!string.IsNullOrWhiteSpace(buscar))
+        if (!string.IsNullOrEmpty(parametros.buscar))
         {
-            consulta = consulta.Where(a =>
-                a.codigo.Contains(buscar) ||
-                a.nombre.Contains(buscar));
+            consulta = consulta.Where(alumno =>
+                alumno.nombre.Contains(parametros.buscar) ||
+                alumno.codigo.Contains(parametros.buscar));
         }
 
         return await consulta.ToListAsync();
     }
-
 
 
     // GET: api/Alumno/5

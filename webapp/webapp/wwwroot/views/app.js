@@ -21,19 +21,12 @@ function abrirVentana(form) {
 
 function cerrarVentana() {
     $('.btn-close').click(e => {
-        $(`#${e.target.dataset.form}`).hidden();
+        $(`#${e.target.dataset.form}`).hide();
     });
 }
 
-async function obtenerAlumnos(buscar = '') {
-    const respuesta = await fetch(`/api/Alumnos/buscar?buscar=${encodeURIComponent(buscar)}`);
-
-    if (!respuesta.ok) {
-        const mensaje = await respuesta.text();
-        console.error("Error del servidor:", respuesta.status, mensaje);
-        return [];
-    }
-
-    const alumnos = await respuesta.json();
-    return alumnos;
+async function obtenerDatos(buscar = '', form = 'Alumnos') {
+    const respuesta = await fetch(`/api/${form}/buscar?buscar=${encodeURIComponent(buscar)}`);
+    const datos = await respuesta.json();
+    return datos;
 }
