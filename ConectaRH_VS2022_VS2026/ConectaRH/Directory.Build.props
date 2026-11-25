@@ -1,0 +1,27 @@
+<Project>
+
+  <!--
+    Configuración central: el mismo código abre y compila en Visual Studio 2022 y Visual Studio 2026.
+      - VS 2022 (MSBuild 17.x, .NET SDK 8/9)  -> net8.0  + EF Core 8.0.10 + Pomelo 8.0.2
+      - VS 2026 (MSBuild 18.x, .NET SDK 10)   -> net10.0 + EF Core 9.0.10 + Pomelo 9.0.0
+    (Pomelo aún no tiene versión para EF Core 10; EF Core 9 corre sin problema en .NET 10.)
+
+    Para forzar uno, desde consola:  dotnet build -p:ConectaTfm=net8.0   (o net10.0)
+    Para fijarlo permanentemente, escribe <ConectaTfm>net8.0</ConectaTfm> en el primer PropertyGroup de abajo.
+  -->
+  <PropertyGroup>
+    <ConectaTfm Condition="'$(ConectaTfm)' == '' And $([MSBuild]::VersionGreaterThanOrEquals('$(MSBuildVersion)', '18.0'))">net10.0</ConectaTfm>
+    <ConectaTfm Condition="'$(ConectaTfm)' == ''">net8.0</ConectaTfm>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(ConectaTfm)' == 'net10.0'">
+    <EfCoreVersion>9.0.10</EfCoreVersion>
+    <PomeloVersion>9.0.0</PomeloVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(ConectaTfm)' != 'net10.0'">
+    <EfCoreVersion>8.0.10</EfCoreVersion>
+    <PomeloVersion>8.0.2</PomeloVersion>
+  </PropertyGroup>
+
+</Project>
